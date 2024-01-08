@@ -6,51 +6,38 @@
 //
 
 import SwiftUI
-import RevenueCat
+import StoreKit
 
 struct ContentView: View {
+  @AppStorage("subscribed") private var subscribed: Bool = false
+  @State private var lifetimePage: Bool = false
   @State private var showAlert = false
   @State private var alertTitle = ""
   @State private var alertDescription = ""
     var body: some View {
         VStack {
             Text("Everyone can see this!")
-          Button {
-            // purchase Pro
-            subscribe()
-          } label: {
-            Text("Subscribe")
-              .frame(width: 300, height: 50)
-              .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 10))
+          SubscriptionStoreView(groupID: "21431347", visibleRelationships: .all) {
+            StoreContent()
+              .containerBackground(Color.cyan.gradient, for: .subscriptionStoreHeader)
           }
+          .backgroundStyle(.clear)
+          .subscriptionStorePickerItemBackground(.thinMaterial)
+          .storeButton(.visible, for: .restorePurchases)
+          .sheet(isPresented: $lifetimePage) {
+            LifetimeStoreView()
+              .presentationDetents([.height(250)])
+              .presentationBackground(.ultraThinMaterial)
+          }
+          Button("More Purchase Options", action: {
+            lifetimePage = true
+          })
         }
         .alert(isPresented: $showAlert) {
           Alert(title: Text(alertTitle), message: Text(alertDescription), dismissButton: .cancel())
         }
         .padding()
     }
-  func subscribe() {
-    Purchases.shared.getOfferings { offerings, error in
-      if let packages = offerings?.current?.availablePackages {
-        Purchases.shared.purchase(package: packages.first!) { transaction, purchaserInfo, error, userCancelled in
-          
-          if error != nil{
-            // handle error
-            alertTitle = "Purchase Failed!"
-            alertDescription = "Error: \(error!.localizedDescription)"
-            showAlert.toggle()
-          }
-          if purchaserInfo?.entitlements["pro"]?.isActive == true {
-            // success
-            print("✅ Purchase Successful!")
-            alertTitle = "✅ Purchase Successful!"
-            alertDescription = "You are now subscribed"
-            showAlert.toggle()
-          }
-        }
-      }
-    }
-  }
 }
 
 #Preview {

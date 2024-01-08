@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct StoreContent: View {
+  @AppStorage("subscribed") private var subscribed: Bool = false
+  
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      ZStack {
+        VStack {
+          Text(subscribed ? "Thanks" : "Choose a plan")
+            .font(.largeTitle.bold())
+          Image(.store)
+            .resizable()
+            .scaledToFit()
+            .clipShape(Circle())
+            .frame(width: 100)
+            .padding()
+          }
+      }
     }
 }
 
