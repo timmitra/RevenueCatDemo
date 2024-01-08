@@ -6,9 +6,16 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 @main
 struct RevenueCatDemoApp: App {
+  
+  init() {
+    Purchases.configure(withAPIKey: "appl_LaYRANqhDmAdniTnaPZGfRIYABl")
+    Purchases.logLevel = .verbose
+  }
+  
     var body: some Scene {
         WindowGroup {
             ContentView()
