@@ -16,6 +16,8 @@
 		2A6CF5E42B4BBD2A004823BB /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6CF5E32B4BBD2A004823BB /* RevenueCat */; };
 		2A6CF5E62B4BBD2A004823BB /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6CF5E52B4BBD2A004823BB /* RevenueCatUI */; };
 		2A6CF5E82B4BC134004823BB /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6CF5E72B4BC134004823BB /* TabBar.swift */; };
+		2AB2951C2B4C574C0040D645 /* StoreContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB2951B2B4C574C0040D645 /* StoreContent.swift */; };
+		2AB2951E2B4C6DFE0040D645 /* LifetimeStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB2951D2B4C6DFE0040D645 /* LifetimeStoreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		2A6CF5E02B4B87C4004823BB /* ProView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProView.swift; sourceTree = "<group>"; };
 		2A6CF5E72B4BC134004823BB /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		2AB2951A2B4C56E00040D645 /* ITG Revenue Cat.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ITG Revenue Cat.storekit"; sourceTree = "<group>"; };
+		2AB2951B2B4C574C0040D645 /* StoreContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreContent.swift; sourceTree = "<group>"; };
+		2AB2951D2B4C6DFE0040D645 /* LifetimeStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifetimeStoreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +78,13 @@
 			children = (
 				2A6CF5D22B4B86B4004823BB /* RevenueCatDemoApp.swift */,
 				2A6CF5D42B4B86B4004823BB /* ContentView.swift */,
+				2AB2951B2B4C574C0040D645 /* StoreContent.swift */,
 				2A6CF5D62B4B86B5004823BB /* Assets.xcassets */,
 				2A6CF5D82B4B86B5004823BB /* Preview Content */,
 				2A6CF5E02B4B87C4004823BB /* ProView.swift */,
 				2A6CF5E72B4BC134004823BB /* TabBar.swift */,
 				2AB2951A2B4C56E00040D645 /* ITG Revenue Cat.storekit */,
+				2AB2951D2B4C6DFE0040D645 /* LifetimeStoreView.swift */,
 			);
 			path = RevenueCatDemo;
 			sourceTree = "<group>";
@@ -171,7 +177,9 @@
 				2A6CF5D52B4B86B4004823BB /* ContentView.swift in Sources */,
 				2A6CF5D32B4B86B4004823BB /* RevenueCatDemoApp.swift in Sources */,
 				2A6CF5E12B4B87C4004823BB /* ProView.swift in Sources */,
+				2AB2951C2B4C574C0040D645 /* StoreContent.swift in Sources */,
 				2A6CF5E82B4BC134004823BB /* TabBar.swift in Sources */,
+				2AB2951E2B4C6DFE0040D645 /* LifetimeStoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
