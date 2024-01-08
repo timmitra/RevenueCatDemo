@@ -17,6 +17,7 @@ struct ContentView: View {
             Text("Everyone can see this!")
           Button {
             // purchase Pro
+            subscribe()
           } label: {
             Text("Subscribe")
               .frame(width: 300, height: 50)
