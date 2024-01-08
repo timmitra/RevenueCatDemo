@@ -6,29 +6,32 @@
 //
 
 import SwiftUI
-import RevenueCat
+//import RevenueCat
 
 struct ProView: View {
+  @AppStorage("subscribed") private var subscribed: Bool = false
   @State private var isSubscribed = false
     var body: some View {
       VStack {
         Text("only subscribers can see this.")
-          .blur(radius: isSubscribed ? 0 : 10)
+          .blur(radius: subscribed ? 0 : 10)
       }
       .onAppear{
         // check subscriber
-        checkSubscriptionStatus()
+        if subscribed == true {
+          isSubscribed = subscribed
+        //checkSubscriptionStatus()
       }
     }
-  func checkSubscriptionStatus() {
-    Purchases.shared.getCustomerInfo { customerInfo, error in
-      if let info = customerInfo {
-        if info.entitlements["pro"]?.isActive == true {
-          print("Subscription Active")
-          isSubscribed = true
-        }
-      }
-    }
+//  func checkSubscriptionStatus() {
+//    Purchases.shared.getCustomerInfo { customerInfo, error in
+//      if let info = customerInfo {
+//        if info.entitlements["pro"]?.isActive == true {
+//          print("Subscription Active")
+//          isSubscribed = true
+//        }
+//      }
+//    }
   }
 }
 
