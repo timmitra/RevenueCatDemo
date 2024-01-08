@@ -12,6 +12,9 @@
 		2A6CF5D72B4B86B5004823BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A6CF5D62B4B86B5004823BB /* Assets.xcassets */; };
 		2A6CF5DA2B4B86B5004823BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A6CF5D92B4B86B5004823BB /* Preview Assets.xcassets */; };
 		2A6CF5E12B4B87C4004823BB /* ProView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6CF5E02B4B87C4004823BB /* ProView.swift */; };
+		2A6CF5E42B4BBD2A004823BB /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6CF5E32B4BBD2A004823BB /* RevenueCat */; };
+		2A6CF5E62B4BBD2A004823BB /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6CF5E52B4BBD2A004823BB /* RevenueCatUI */; };
+		2A6CF5E82B4BC134004823BB /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6CF5E72B4BC134004823BB /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,7 @@
 		2A6CF5D62B4B86B5004823BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A6CF5D92B4B86B5004823BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A6CF5E02B4B87C4004823BB /* ProView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProView.swift; sourceTree = "<group>"; };
+		2A6CF5E72B4BC134004823BB /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +32,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A6CF5E62B4BBD2A004823BB /* RevenueCatUI in Frameworks */,
+				2A6CF5E42B4BBD2A004823BB /* RevenueCat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +64,7 @@
 				2A6CF5D62B4B86B5004823BB /* Assets.xcassets */,
 				2A6CF5D82B4B86B5004823BB /* Preview Content */,
 				2A6CF5E02B4B87C4004823BB /* ProView.swift */,
+				2A6CF5E72B4BC134004823BB /* TabBar.swift */,
 			);
 			path = RevenueCatDemo;
 			sourceTree = "<group>";
@@ -86,6 +93,10 @@
 			dependencies = (
 			);
 			name = RevenueCatDemo;
+			packageProductDependencies = (
+				2A6CF5E32B4BBD2A004823BB /* RevenueCat */,
+				2A6CF5E52B4BBD2A004823BB /* RevenueCatUI */,
+			);
 			productName = RevenueCatDemo;
 			productReference = 2A6CF5CF2B4B86B4004823BB /* RevenueCatDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 2A6CF5C62B4B86B4004823BB;
+			packageReferences = (
+				2A6CF5E22B4BBD29004823BB /* XCRemoteSwiftPackageReference "purchases-ios" */,
+			);
 			productRefGroup = 2A6CF5D02B4B86B4004823BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,6 +157,7 @@
 				2A6CF5D52B4B86B4004823BB /* ContentView.swift in Sources */,
 				2A6CF5D32B4B86B4004823BB /* RevenueCatDemoApp.swift in Sources */,
 				2A6CF5E12B4B87C4004823BB /* ProView.swift in Sources */,
+				2A6CF5E82B4BC134004823BB /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +363,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A6CF5E22B4BBD29004823BB /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.31.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A6CF5E32B4BBD2A004823BB /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A6CF5E22B4BBD29004823BB /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
+		};
+		2A6CF5E52B4BBD2A004823BB /* RevenueCatUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A6CF5E22B4BBD29004823BB /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCatUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A6CF5C72B4B86B4004823BB /* Project object */;
 }
