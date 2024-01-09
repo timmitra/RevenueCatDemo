@@ -17,21 +17,13 @@ struct ProView: View {
           .blur(radius: subscribed ? 0 : 10)
       }
       .onAppear{
+        print("subscribed: \(subscribed)")
         // check subscriber
         if subscribed == true {
           isSubscribed = subscribed
         //checkSubscriptionStatus()
       }
     }
-//  func checkSubscriptionStatus() {
-//    Purchases.shared.getCustomerInfo { customerInfo, error in
-//      if let info = customerInfo {
-//        if info.entitlements["pro"]?.isActive == true {
-//          print("Subscription Active")
-//          isSubscribed = true
-//        }
-//      }
-//    }
   }
 }
 
